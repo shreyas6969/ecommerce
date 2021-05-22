@@ -1,12 +1,15 @@
 1. git clone the project from repo
+    git clone https://github.com/shreyas6969/ecommerce.git
+
 2. In the clone location, move to the directory and run. 
-mvn spring-boot:run
+   mvn spring-boot:run
 
 3. If you using postman, you could use the below json and end points to access them 
 
 Create userProfile
 URL : localhost:8080/user/profile/
 Body: JSON
+
 {
   "email": "shreyas.v@abc.com",
   "firstName": "Shreyas",
@@ -17,10 +20,10 @@ Body: JSON
 }
 
 
-Get user
+Get user profile
 localhost:8080/user/profile/1
 
-update user
+Update user profile
 URL : localhost:8080/user/profile/1
 {
   "email": "shreyas.v@abc.com",
