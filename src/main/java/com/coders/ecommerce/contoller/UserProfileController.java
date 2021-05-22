@@ -44,7 +44,15 @@ public class UserProfileController {
     	if (userProfileService.getUser(userId) == null) {
             throw new ResourceNotFoundException("User id should not be null");
         }
-        UserProfile result = userProfileService.saveUser(userProfile);
+        UserProfile updateUser=userProfileService.getUser(userId);
+    	updateUser.setUserImageUrl(userProfile.getUserImageUrl());
+    	updateUser.setFirstName(userProfile.getFirstName());
+    	updateUser.setLastName(userProfile.getLastName());
+    	updateUser.setPrimaryAddress(userProfile.getPrimaryAddress());
+    	updateUser.setSecondaryAddress(userProfile.getSecondaryAddress());
+    	updateUser.setPhoneNumber(userProfile.getPhoneNumber());
+    	updateUser.setEmail(userProfile.getEmail());
+        UserProfile result = userProfileService.saveUser(updateUser);
         return ResponseEntity.ok().body(result);
     }
     
